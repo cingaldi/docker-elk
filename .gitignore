@@ -1,0 +1,11 @@
+### Composer template
+composer.phar
+app/vendor/
+app/storage/cache/*
+.idea
+
+
+### node
+app/auth-service/node_modules
+app/auth-service/node_modules/send/node_modules
+

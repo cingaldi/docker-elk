@@ -1,0 +1,25 @@
+input {
+    file {
+        path => "/var/logs/docker/*/*.log"
+        start_position => "beginning"
+    }
+}
+
+
+
+## Add your filters / logstash plugins configuration here
+#filter {
+#	grok {
+#    	match => { "message" => "%{WORD:txid} %{WORD:msg}" }
+#  	}
+#	json {
+#		source => "message"
+#	}
+#}
+
+output {
+	elasticsearch {
+		hosts => "elasticsearch:9200"
+		index => "logs"
+	}
+}
